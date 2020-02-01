@@ -5,7 +5,7 @@ import { AuthContext } from '../contexts/AuthContext';
 class Navbar extends Component {
   render() { 
     return ( 
-      <AuthContext>{(authContext) => (
+      <AuthContext.Consumer>{(authContext) => (
         <ThemeContext.Consumer>{(themeContext) => {
           const { isAuthenticated, toggleAuth } = authContext;
           const { isLightTheme, light, dark } = themeContext;
@@ -24,7 +24,7 @@ class Navbar extends Component {
             </nav>
           )
         }}</ThemeContext.Consumer>
-      )}</AuthContext>
+      )}</AuthContext.Consumer>
     );
   }
 }
