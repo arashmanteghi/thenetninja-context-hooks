@@ -23,6 +23,13 @@ const SongList = () => {
     console.log('useEffect callback', age);
   }, [age]);
 
+  useEffect(() => {
+    console.log('useEffect with empty array is second param');
+    return () => {
+      console.log('unMount songList');
+    }
+  }, []);
+
   return (
     <div className="song-list">
       <ul>
